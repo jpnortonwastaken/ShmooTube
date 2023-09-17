@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @font-face {
+    font-family: 'YouTubeSansBlack';
+    src: url('youtube-sans-font/YouTubeSansBlack.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansBold';
+        src: url('youtube-sans-font/YouTubeSansBold.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansDarkBlack';
+        src: url('youtube-sans-font/YouTubeSansDarkBlack.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansDarkBold';
+        src: url('youtube-sans-font/YouTubeSansDarkBold.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansDarkExtrabold';
+        src: url('youtube-sans-font/YouTubeSansDarkExtrabold.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansDarkLight';
+        src: url('youtube-sans-font/YouTubeSansDarkLight.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansDarkMedium';
+        src: url('youtube-sans-font/YouTubeSansDarkMedium.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansDarkRegular';
+        src: url('youtube-sans-font/YouTubeSansDarkRegular.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansDarkSemibold';
+        src: url('youtube-sans-font/YouTubeSansDarkSemibold.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansExtrabold';
+        src: url('youtube-sans-font/YouTubeSansExtrabold.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansLight';
+        src: url('youtube-sans-font/YouTubeSansLight.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansMedium';
+        src: url('youtube-sans-font/YouTubeSansMedium.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansRegular';
+        src: url('youtube-sans-font/YouTubeSansRegular.otf') format('opentype');
+    }
+    @font-face {
+        font-family: 'YouTubeSansSemibold';
+        src: url('youtube-sans-font/YouTubeSansSemibold.otf') format('opentype');
+    }
+    body {
+      width: 400px;
+      height: 550px;
+      margin: 20px;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-family: 'YouTubeSansMedium', sans-serif;
+      cursor: default;
+      background-color: #0f0f0f;
+      color: white;
+    }
+    body ::selection {
+        background-color: red;
+    }
+    #title-div {
+      display: flex;
+      align-items: center;
+      background-color: #272727;
+      width: 100%;
+      justify-content: center;
+      padding: 5px 0px;
+      border: 1px solid #3d3d3d;
+      border-radius: 15px;
+    }
+    #title {
+      margin: 5px 0px;
+      font-family: 'YouTubeSansBold', sans-serif;
+      font-size: 22px;
+    }
+    .time {
+      margin: 10px;
+      font-size: 20px;
+      padding: 10px 25px;
+      background-color: #272727;
+      border-radius: 15px;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .time:hover {
+      transform: scale(1.1);
+    }
+    h1 {
+      margin: 0px;
+      font-size: 20px;
+    }
+    hr {
+      width: 100%;
+      border: 1px solid transparent;
+      margin: 10px;
+    }
+    #thumbnail-container {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 80%;
+        height: 0;
+        padding-bottom: 45%;
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0px 3px 25px 0px rgba(255, 255, 255, 0.2);
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #thumbnail-container:hover {
+        transform: scale(1.1);
+    }
+    #thumbnail {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    #viewFullSize {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        background-color: #272727;
+        color: white;
+        font-family: 'YouTubeSansMedium', sans-serif;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        opacity: 0;
+        transition: opacity 0.3s,
+                    background-color 0.3s,
+                    transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    #thumbnail-container:hover #viewFullSize {
+        opacity: 1;
+    }
+    #viewFullSize:hover {
+        background-color: #373737;
+        transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div id="title-div">
+    <h1 id="title">ShmooTube</h1>
+    <h2 style="margin-left: 5px;"> - YouTube Stats Extension</h2>
+  </div>
+  <hr>
+  <h1>Time Spent Watching YouTube Ads</h1>
+  <p id="totalAdTime" class="time">Loading...</p>
+  <hr>
+  <h1 id="thumbnail-label">Current Video Thumbnail</h1>
+  <div id="thumbnail-container">
+    <img id="thumbnail" src="" alt="Video Thumbnail">
+    <button id="viewFullSize">View full size</button>
+  </div>
+  <hr>
+  <h1 id="playlistTimeLabel" style="display: none">Playlist Total Duration</h1>
+  <p id="playlistTime" class="time" style="display: none">Loading...</p>
+  <script src="popup.js"></script>
+</body>
+</html>

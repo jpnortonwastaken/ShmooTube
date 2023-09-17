@@ -1,0 +1,36 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Ad Tracker",
+    "version": "1.0",
+    "permissions": ["storage", "tabs", "<all_urls>"],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": true
+    },
+    "browser_action": {
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      "youtube-sans-font/YouTubeSansBlack.otf",
+      "youtube-sans-font/YouTubeSansBold.otf",
+      "youtube-sans-font/YouTubeSansDarkBlack.otf",
+      "youtube-sans-font/YouTubeSansDarkBold.otf",
+      "youtube-sans-font/YouTubeSansDarkExtrabold.otf",
+      "youtube-sans-font/YouTubeSansDarkLight.otf",
+      "youtube-sans-font/YouTubeSansDarkMedium.otf",
+      "youtube-sans-font/YouTubeSansDarkRegular.otf",
+      "youtube-sans-font/YouTubeSansDarkSemibold.otf",
+      "youtube-sans-font/YouTubeSansExtrabold.otf",
+      "youtube-sans-font/YouTubeSansLight.otf",
+      "youtube-sans-font/YouTubeSansMedium.otf",
+      "youtube-sans-font/YouTubeSansRegular.otf",
+      "youtube-sans-font/YouTubeSansSemibold.otf"
+  ]  
+  }
+  
