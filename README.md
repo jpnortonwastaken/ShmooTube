@@ -1,7 +1,7 @@
 ## ShmooTube - Extension
 
 A Chrome extension to:
-- track and display total time spent watching ads on the YouTube
+- track and display total time spent watching ads on YouTube
 - view the current video's thumbnail in full size
 - calculate a playlist's total duration
 
