@@ -17,7 +17,7 @@ JavaScript, HTML, CSS, JSON
 
 Chrome:
 1. Download and unzip the extension
-2. Go to chrome://extensions/
+2. Go to `chrome://extensions/`
 3. Make sure `Developer mode` is enabled on the top right
 4. Press `Load unpacked` on the top left
 5. Locate the extension folder
